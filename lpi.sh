@@ -1,10 +1,13 @@
+#Author S.Mkrtchyan
+#Facebook - https://facebook.com/armhacker.666
+
 clear
 echo "Բարև $USER :) "
 echo 'Բարի գալուստ LinuxProgrammInstaller '
 echo 'Ընտրել ծրագրային ապահովումը ցուցակից'
-echo '1 - գրաֆիկական խմբագրիչներ'
-echo '2 - տեքստային խմբագրիչներ'
-
+echo '1 - Գրաֆիկական խմբագրիչներ'
+echo '2 - Տեքստային խմբագրիչներ'
+echo '3 - Օգնութուն'
 read -p "Գրիր թիվը ֊ " select_category
 
 if [[ $select_category == '1' ]]; then
@@ -16,6 +19,7 @@ if [[ $select_category == '1' ]]; then
     echo "5) MyPaint"
     echo "6) Krita"
     read -p "Գրել թիվը ֊ " select_graphp
+
 elif [[ $select_category == '2' ]]; then
   echo "Տեստային խմբագրիչներ"
   echo "1) Nano "
@@ -26,8 +30,18 @@ elif [[ $select_category == '2' ]]; then
   echo "5) Atom"
   echo "5) Mousepad"
   read -p "Գրել թիվը ֊ " select_texteditor
+
+elif [[ $select_category == '3' ]]; then
+  echo "Հեղինակ՝ Սամվել Մկրտչյան
+        LinuxProgrammInstaller―ից օգտվելու համար ներմուծեք տվյալ
+        ցանկի ծրագրի անհատական թիվը և սեղմեք Enter ։ Ծրագիրը ավտոմատ
+        կտեղադրի տվյալ ծրագրիը Ձեր Linux միջավայրի օպերացյոն համակարգի վրա։
+        Թեսթավորվել է Debian դիստրիբուտիվների  և Ubuntu օպերացյոն համակարգի վրա։
+      "
+  read -p "1) Գլխավոր մենյու " backmenu
+
 else
-    echo " Ծրագրի կանգ "
+    echo " Օգտագործեք նշված ցանկից տվյալ ծրագրի անհատական թիվը ։ "
 fi
 # Գրաֆիկական խմբագրիչների տեղադրում
 if   [[ $select_graphp == '1' ]]; then
@@ -49,7 +63,7 @@ elif [[ $select_graphp == '5' ]]; then
   echo "Սկսել Krita֊ի տեղադրումը"
   sudo apt-get install cream
 else
-  echo "Ծրագրի կանգ"
+  echo " Օգտագործեք նշված ցանկից տվյալ ծրագրի անհատական թիվը ։ "
 fi
 
 
@@ -73,6 +87,11 @@ elif [[ $select_graphp == '3' ]]; then
 elif [[ $select_graphp == '3' ]]; then
   echo "Սկսել Mousepad֊ի տեղադրումը"
   sudo apt-get istall mousepad
+else
+  echo " Օգտագործեք նշված ցանկից տվյալ ծրագրի անհատական թիվը ։ "
+fi
+if [[ $backmenu == '1'  ]]; then
+  bash lpi.sh
 else
   echo "Ծրագրի կանգ"
 fi
